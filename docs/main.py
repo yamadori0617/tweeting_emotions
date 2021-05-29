@@ -1,6 +1,6 @@
 import tweepy
 import collections
-from get_tweets import get_tweets
+from twitter_api import get_tweets
 from emotion_scores import tweets_scoring
 
 
