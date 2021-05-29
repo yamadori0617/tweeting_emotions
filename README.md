@@ -1,5 +1,6 @@
 # Twitter 感情分析
 
+## 例：
 ```
 > python main.py
 
