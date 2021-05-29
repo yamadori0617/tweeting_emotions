@@ -23,6 +23,8 @@ score   : 0.5334285714285716
 ```
 ## 例2
 ```
+> python main.py
+
 keyword: 東京オリンピック
 searches count: 1000
 ```
