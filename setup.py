@@ -5,6 +5,12 @@ setup(
     long_description=readme,
     author='Yamadori0617',
     url='https://github.com/yamadori0617/tweeting_emotions',
+    install_requires=[
+        "oseti",
+        "tweepy",
+        "collections",
+        "mecab-python3"
+    ],
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )
