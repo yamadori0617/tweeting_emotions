@@ -16,5 +16,3 @@ positive: 59/100
 negative: 21/100
 normal  : 20/100
 score   : 0.5334285714285716
-
-
