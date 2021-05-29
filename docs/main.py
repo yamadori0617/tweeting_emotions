@@ -1,13 +1,13 @@
 import tweepy
 import collections
-from get_tweets import get_tweets
+from twitter_api import get_tweets
 from emotion_scores import tweets_scoring
 
 
 def main() -> None:
     try:
         keyword = input("keyword: ")
-        count = int(input("count: "))
+        count = int(input("searches count: "))
 
         tweets = get_tweets(keyword, count)
         emotion_sum_scores, positive_words, negative_words = tweets_scoring(tweets)
@@ -25,8 +25,9 @@ def main() -> None:
             else:
                 normal_ratio += 1
 
-        print(positive_words_counter)
-        print(negative_words_counter)
+        print()
+        print("positive words: \n{}".format(positive_words_counter))
+        print("negative_words: \n{}".format(negative_words_counter))
         print("-------------------------------")
         print("positive: {}/{}".format(positive_ratio, count))
         print("negative: {}/{}".format(negative_ratio, count))

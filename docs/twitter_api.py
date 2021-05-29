@@ -16,9 +16,12 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 
-def get_tweets(keyword: str, count: int = 100) -> list:
+def get_tweets(keyword: str, count: int) -> list:
+    tweets = []
     query = re.sub('[<>/\\\'\"\t\n]', '', keyword)+' exclude:retweets AND exclude:retweets'
-    tweets = api.search(q=query, count=count, tweet_mode='extended', exclude_replies='True')
+    api.search(q=query, count=count, tweet_mode='extended', exclude_replies='True')
+    for tweet in tweepy.Cursor(api.search, q=query, tweet_mode='extended', exclude_replies='True', lang='ja').items(count):
+        tweets.append(tweet)
     return tweets
 
 
