@@ -1,9 +1,12 @@
 # Twitter 感情分析
 
 ```
+> python main.py
+
 keyword: イスラエル
 searches count: 100
-
+```
+```
 positive words:
 [('支援', 6), ('ため', 5), ('命', 5), ('いい', 5), ('支持', 4), ('陽', 3), ('最高', 3), ('楽しむ', 3), ('効果', 3), ('無料', 2)]
 negative_words:
