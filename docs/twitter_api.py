@@ -44,7 +44,7 @@ def main():
         print('Enter an integer for count.')
 
     except tweepy.TweepError as e:
-        print('The API token may be wrong.')
+        print('The API token may be wrong.\nCheck the config.ini file.')
 
 
 if __name__ == "__main__":
