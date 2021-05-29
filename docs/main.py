@@ -25,8 +25,9 @@ def main() -> None:
             else:
                 normal_ratio += 1
 
-        print("positive words: {}".format(positive_words_counter))
-        print("negative_words: {}".format(negative_words_counter))
+        print()
+        print("positive words: \n{}".format(positive_words_counter))
+        print("negative_words: \n{}".format(negative_words_counter))
         print("-------------------------------")
         print("positive: {}/{}".format(positive_ratio, count))
         print("negative: {}/{}".format(negative_ratio, count))
