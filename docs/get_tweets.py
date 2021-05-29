@@ -1,11 +1,15 @@
 import re
 import tweepy
+import configparser
 
 
-API_KEY = ""
-API_SECRET = ""
-ACCESS_TOKEN = ""
-ACCESS_TOKEN_SECRET = ""
+config = configparser.ConfigParser()
+config.read('../config.ini', encoding="utf-8")
+
+API_KEY = config.get('API_INFO', 'API_KEY')
+API_SECRET = config.get('API_INFO', 'API_SECRET')
+ACCESS_TOKEN = config.get('API_INFO', 'ACCESS_TOKEN')
+ACCESS_TOKEN_SECRET = config.get('API_INFO', 'ACCESS_TOKEN_SECRET')
 
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
