@@ -1,3 +1,5 @@
-oseti==0.2
+sengiri==0.2.1
+ipadic==1.0.0
+neologdn==0.5.1
 tweepy==3.10.0
 MeCab==0.996.3
