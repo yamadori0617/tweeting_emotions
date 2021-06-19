@@ -11,11 +11,12 @@ def main() -> None:
 
         tweets = get_tweets(keyword, count)
         emotion_sum_scores, positive_words, negative_words = tweets_scoring(tweets)
+        total_get_count = len(emotion_sum_scores)
         positive_words_counter = sorted(collections.Counter(positive_words).items(),
                                         key=lambda x: x[1], reverse=True)[:10]
         negative_words_counter = sorted(collections.Counter(negative_words).items(),
                                         key=lambda x: x[1], reverse=True)[:10]
-
+        
         positive_ratio, negative_ratio, normal_ratio = 0,0,0
         for emotion_sum_score in emotion_sum_scores:
             if emotion_sum_score > 0:
@@ -29,10 +30,10 @@ def main() -> None:
         print("positive words: \n{}".format(positive_words_counter))
         print("negative_words: \n{}".format(negative_words_counter))
         print("-------------------------------")
-        print("positive: {}/{}".format(positive_ratio, count))
-        print("negative: {}/{}".format(negative_ratio, count))
-        print("normal  : {}/{}".format(normal_ratio, count))
-        print("score   : {}".format(sum(emotion_sum_scores) / count))
+        print("positive: {}/{}".format(positive_ratio, total_get_count))
+        print("negative: {}/{}".format(negative_ratio, total_get_count))
+        print("normal  : {}/{}".format(normal_ratio, total_get_count))
+        print("score   : {}".format(sum(emotion_sum_scores) / total_get_count))
 
     except ValueError as e:
         print('Enter an integer for count.')
