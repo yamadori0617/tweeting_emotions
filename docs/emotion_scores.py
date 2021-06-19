@@ -9,13 +9,16 @@ def tweets_scoring(tweets: list) -> int:
     negative_words = []
 
     for tweet in tweets:
-        tweet_text = tweet.full_text
-        emotion_dicts = analyzer.analyze_detail(tweet_text)
-        emotion_scores.append(sum(
-            [emotion_dict['score'] for emotion_dict in emotion_dicts]))
-        for emotion_dict in emotion_dicts:
-            positive_words.append(emotion_dict['positive'])
-            negative_words.append(emotion_dict['negative'])
+        try:
+            tweet_text = tweet.full_text
+            emotion_dicts = analyzer.analyze_detail(tweet_text)
+            emotion_scores.append(sum(
+                [emotion_dict['score'] for emotion_dict in emotion_dicts]))
+            for emotion_dict in emotion_dicts:
+                positive_words.append(emotion_dict['positive'])
+                negative_words.append(emotion_dict['negative'])
+        except IndexError as e:
+            continue
 
     positive_words = list(itertools.chain.from_iterable(positive_words))
     negative_words = list(itertools.chain.from_iterable(negative_words))
