@@ -3,3 +3,4 @@ ipadic==1.0.0
 neologdn==0.5.1
 tweepy==3.10.0
 MeCab==0.996.3
+mecab-python3==1.0.3
