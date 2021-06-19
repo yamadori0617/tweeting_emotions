@@ -39,3 +39,6 @@ negative: 59/100
 normal  : 20/100
 score   : -0.49333333333333335
 ```
+
+## LICENCE
+MIT
