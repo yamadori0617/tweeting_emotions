@@ -19,7 +19,6 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 def get_tweets(keyword: str, count: int) -> list:
     tweets = []
     query = re.sub('[<>/\\\'\"\t\n]', '', keyword)+' exclude:retweets AND exclude:retweets'
-    api.search(q=query, count=count, tweet_mode='extended', exclude_replies='True')
     for tweet in tweepy.Cursor(api.search, q=query, tweet_mode='extended', exclude_replies='True', lang='ja').items(count):
         tweets.append(tweet)
     return tweets
